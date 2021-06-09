@@ -12,7 +12,7 @@ namespace Asp.NetCoreMySecondApi.Controllers
     [Route("api/Products")]
     public class ProductsController: ControllerBase
     {
-        private List<Product> _products = new List<Product>{
+        private static List<Product> _products = new List<Product>{
 
             new Product{
 
@@ -36,5 +36,15 @@ namespace Asp.NetCoreMySecondApi.Controllers
 
         /* [HttpGet]
         public string Home() => "Hello World"; */
+
+        [HttpPost]
+        public IActionResult CreatedProducts([FromBody] Product model){
+
+            var newId = _products.Count + 1;
+
+            _products.Add(model);
+
+            return Ok();
+        }
     }
 }

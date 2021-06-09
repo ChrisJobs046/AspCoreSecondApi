@@ -1,3 +1,19 @@
 #Get Products
 
 GET http://localhost:5000/api/Products
+
+
+#Crear Products
+
+POST http://localhost:5000/api/Products
+Content-Type: application/json
+
+{
+
+    "Name": "iphone 12",
+    "Price": "48000",
+    "Description": "Celular ultimo modelo de la marca iphone, camara ultra plus"
+
+}
+
+PUT http://localhost:5000/api/Products
